@@ -36,3 +36,4 @@ rebel.xml
 .springBeans
 .settings
 
+/bin/
