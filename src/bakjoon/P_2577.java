@@ -14,6 +14,7 @@ public class P_2577 {
 		int third = sc.nextInt();
 		sc.nextLine();
 		
+		sc.close();
 		String result = Integer.toString(first * second * third);
 		char [] cArray = result.toCharArray();
 		
