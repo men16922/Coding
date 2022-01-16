@@ -75,7 +75,7 @@ public class p1 {
         
         Map<String, Integer> answerMap = new HashMap<>();
         for(String id : idSet) {
-        	System.out.println(id);
+//        	System.out.println(id);
         	answerMap.put(id,  0);
         }
         
@@ -114,7 +114,13 @@ public class p1 {
 		int [] answer = solution(id_list, report, k);
 		
 		for(int i = 0; i< answer.length; i++) {
-			System.out.println(answer[i]);
+			
+			if(i == answer.length - 1) {
+				System.out.print(answer[i]);
+			} else {
+				System.out.print(answer[i] + ",");
+			}
+			
 		}
 	}
 }
