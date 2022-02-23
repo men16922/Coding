@@ -1,3 +1,5 @@
+package inflearn;
+
 import java.util.*;
 class Body implements Comparable<Body>{
     public int h, w;
