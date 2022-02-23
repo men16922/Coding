@@ -13,7 +13,7 @@ class Body implements Comparable<Body>{
     }
 }
 
-class Main {
+class p9_1 {
 	public int solution(ArrayList<Body> arr, int n){
 		int cnt=0;
 		Collections.sort(arr);
@@ -28,7 +28,7 @@ class Main {
 	}
 
 	public static void main(String[] args){
-		Main T = new Main();
+		p9_1 T = new p9_1();
 		Scanner kb = new Scanner(System.in);
 		int n=kb.nextInt();
 		ArrayList<Body> arr = new ArrayList<>();
