@@ -50,7 +50,7 @@ public class p8_6 {
 		for(int i = 0 ; i < n; i++) arr[i] = kb.nextInt();
 		ch = new int[n];
 		pm = new int[m];
-		
+		//
 		T.DFS(0);
 	}
 }
