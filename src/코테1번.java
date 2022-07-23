@@ -8,7 +8,6 @@ public class 코테1번 {
 	        long [] weekDay = {0, 1, 2, 3, 4, 5, 6, 7};
 	        // 월요일부터 갈경우는 0
 	        int count = 0;
-	        for()
 	        //System.out.println(count);
 	        return answer;
 	    }
@@ -34,7 +33,6 @@ public class 코테1번 {
 				if(n/7 < 1) {
 					 least+=1;
 				}
-				if(n%)
 			}
 			
 		}
