@@ -1,4 +1,4 @@
-package doit;
+package doit.prepare;
 
 public class 시간복잡도_판별원리3 {
     public static void main(String[] args) {

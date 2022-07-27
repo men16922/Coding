@@ -1,4 +1,4 @@
-package doit;
+package doit.prepare;
 
 public class timeComplexityExample1 {
     public static void main(String[] args) {

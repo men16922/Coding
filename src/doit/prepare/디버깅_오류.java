@@ -1,4 +1,4 @@
-package doit;
+package doit.prepare;
 
 import java.util.Scanner;
 
