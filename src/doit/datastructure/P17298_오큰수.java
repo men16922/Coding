@@ -6,35 +6,35 @@ import java.io.OutputStreamWriter;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class P17298_¿ÀÅ«¼ö {
+public class P17298_ì˜¤í°ìˆ˜ {
 
 	public static void main(String[] args) throws IOException {
 		Scanner sc = new Scanner(System.in);
 		
 		int N = sc.nextInt();
 		
-		int A [] = new int [N]; // ¼ö¿­ ¹è¿­
-		int ans [] = new int [N]; // Á¤´ä ¹è¿­
+		int A [] = new int [N]; // ìˆ˜ì—´ ë°°ì—´
+		int ans [] = new int [N]; // ì •ë‹µ ë°°ì—´
 		
 		for(int i = 0; i < N; i++) {
 			A[i] = sc.nextInt();
 		}
 		
 		Stack<Integer> stack = new Stack<>();
-		stack.push(0); // Ã³À½¿¡´Â Ç×»ó ½ºÅÃÀÌ ºñ¾î ÀÖÀ¸¹Ç·Î ÃÖÃÊ °ªÀ» pushÇÏ¿© ÃÊ±âÈ­
+		stack.push(0); // ì²˜ìŒì—ëŠ” í•­ìƒ ìŠ¤íƒì´ ë¹„ì–´ ìˆìœ¼ë¯€ë¡œ ìµœì´ˆ ê°’ì„ pushí•˜ì—¬ ì´ˆê¸°í™”
 		
 		for(int i = 1; i < N; i++) {
-			// ½ºÅÃÀÌ ºñ¾î ÀÖÁö ¾Ê°í ÇöÀç ¼ö¿­ÀÌ ½ºÅÃ top ÀÎµ¦½º°¡ °¡¸®Å°´Â ¼ö¿­º¸´Ù Å« °æ¿ì
+			// ìŠ¤íƒì´ ë¹„ì–´ ìˆì§€ ì•Šê³  í˜„ì¬ ìˆ˜ì—´ì´ ìŠ¤íƒ top ì¸ë±ìŠ¤ê°€ ê°€ë¦¬í‚¤ëŠ” ìˆ˜ì—´ë³´ë‹¤ í° ê²½ìš°
 			while(!stack.isEmpty() && A[stack.peek()] < A[i]) {
-				ans[stack.pop()] = A[i]; // Á¤´ä ¹è¿­¿¡ ¿ÀÅ«¼ö¸¦ ÇöÀç ¼ö¿­·Î ÀúÀåÇÏ±â
+				ans[stack.pop()] = A[i]; // ì •ë‹µ ë°°ì—´ì— ì˜¤í°ìˆ˜ë¥¼ í˜„ì¬ ìˆ˜ì—´ë¡œ ì €ì¥í•˜ê¸°
 			}
-			stack.push(i); // ½Å±Ô µ¥ÀÌÅÍ push
+			stack.push(i); // ì‹ ê·œ ë°ì´í„° push
 		}
 		
 		while(!stack.empty()) {
-			// ¹İº¹¹®À» ´Ù µ¹°í ³ª¿Ô´Âµ¥ ½ºÅÃÀÌ ºñ¾î ÀÖÁö ¾Ê´Ù¸é
+			// ë°˜ë³µë¬¸ì„ ë‹¤ ëŒê³  ë‚˜ì™”ëŠ”ë° ìŠ¤íƒì´ ë¹„ì–´ ìˆì§€ ì•Šë‹¤ë©´
 			ans[stack.pop()] = -1;
-			// ½ºÅÃ¿¡ ½×ÀÎ index¿¡ -1À» ³Ö´Â´Ù.`
+			// ìŠ¤íƒì— ìŒ“ì¸ indexì— -1ì„ ë„£ëŠ”ë‹¤.`
 		}
 		
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));

@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class P11286_Àı´ñ°ªÈü {
+public class P11286_ì ˆëŒ“ê°’í™ {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -17,9 +17,9 @@ public class P11286_Àı´ñ°ªÈü {
          int second_abs = Math.abs(o2);
 
          if(first_abs == second_abs) {
-             return o1 > o2 ? 1 : -1; // Àı´ñ°ªÀÌ °°À¸¸é À½¼ö ¿ì¼± Á¤·Ä
+             return o1 > o2 ? 1 : -1; // ì ˆëŒ“ê°’ì´ ê°™ìœ¼ë©´ ìŒìˆ˜ ìš°ì„  ì •ë ¬
          } else {
-             return first_abs - second_abs; // Àı´ñ°ªÀ» ±âÁØÀ¸·Î Á¤·ÄÇÏ±â
+             return first_abs - second_abs; // ì ˆëŒ“ê°’ì„ ê¸°ì¤€ìœ¼ë¡œ ì •ë ¬í•˜ê¸°
          }
 
        });
@@ -28,7 +28,7 @@ public class P11286_Àı´ñ°ªÈü {
             int request = Integer.parseInt(bufferedReader.readLine());
             if(request == 0) {
                 if(pQueue.isEmpty()) System.out.println(0);
-                else System.out.println(pQueue.poll()); // Å¥ÀÇ front°ª Ãâ·Â
+                else System.out.println(pQueue.poll()); // íì˜ frontê°’ ì¶œë ¥
             } else {
                 pQueue.add(request);
             }

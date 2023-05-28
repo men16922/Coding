@@ -5,38 +5,38 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class P12891_DNAºñ¹Ğ¹øÈ£ {
+public class P12891_DNAë¹„ë°€ë²ˆí˜¸ {
 
-    static int [] checkArr = new int[4]; // ºñ¹Ğ¹øÈ£ Ã¼Å© ¹è¿­
-    static int [] myArr = new int[4]; // ÇöÀç »óÅÂ ¹è¿­
-    static int checkSecret = 0; // ÃæÁ· ¼ö °³¼ö;
+    static int [] checkArr = new int[4]; // ë¹„ë°€ë²ˆí˜¸ ì²´í¬ ë°°ì—´
+    static int [] myArr = new int[4]; // í˜„ì¬ ìƒíƒœ ë°°ì—´
+    static int checkSecret = 0; // ì¶©ì¡± ìˆ˜ ê°œìˆ˜;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine());
-        int S = Integer.parseInt(stringTokenizer.nextToken()); // ¹®ÀÚ¿­ Å©±â
-        int P = Integer.parseInt(stringTokenizer.nextToken()); // ºÎºĞ ¹®ÀÚ¿­ Å©±â
+        int S = Integer.parseInt(stringTokenizer.nextToken()); // ë¬¸ìì—´ í¬ê¸°
+        int P = Integer.parseInt(stringTokenizer.nextToken()); // ë¶€ë¶„ ë¬¸ìì—´ í¬ê¸°
 
-        char [] A = new char[S]; // ¹®ÀÚ¿­ ¹è¿­
+        char [] A = new char[S]; // ë¬¸ìì—´ ë°°ì—´
         int result = 0;
         A = bufferedReader.readLine().toCharArray();
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
 
-        // ºñ¹Ğ¹øÈ£ Ã¼Å© ¹è¿­ °¢°¢ÀÇ °³¼ö
+        // ë¹„ë°€ë²ˆí˜¸ ì²´í¬ ë°°ì—´ ê°ê°ì˜ ê°œìˆ˜
         for(int i = 0; i < 4; i++) {
             checkArr[i] = Integer.parseInt(stringTokenizer.nextToken());
             if(checkArr[i] == 0) checkSecret++;
         }
 
-        for(int i = 0; i < P; i++) { // ÃÊ±â P ºÎºĞ ¹®ÀÚ¿­ Ã³¸® ºÎºĞ
+        for(int i = 0; i < P; i++) { // ì´ˆê¸° P ë¶€ë¶„ ë¬¸ìì—´ ì²˜ë¦¬ ë¶€ë¶„
             Add(A[i]);
         }
         if(checkSecret == 4) {
             result++;
         }
-        // ½½¶óÀÌµù À©µµ¿ì Ã³¸® ºÎºĞ
+        // ìŠ¬ë¼ì´ë”© ìœˆë„ìš° ì²˜ë¦¬ ë¶€ë¶„
         for(int i = P; i < S; i++) {
-            int j = i - P; // ½½¶óÀÌµù À©µµ¿ìÀÇ Ã¹¹øÂ° ºÎºĞ
+            int j = i - P; // ìŠ¬ë¼ì´ë”© ìœˆë„ìš°ì˜ ì²«ë²ˆì§¸ ë¶€ë¶„
             Add(A[i]);
             Remove(A[j]);
             if(checkSecret == 4) {
@@ -50,7 +50,7 @@ public class P12891_DNAºñ¹Ğ¹øÈ£ {
     }
 
     /**
-     * »õ·Î µé¾î¿Â ¹®ÀÚ¸¦ Ã³¸®ÇÏ´Â ÇÔ¼ö
+     * ìƒˆë¡œ ë“¤ì–´ì˜¨ ë¬¸ìë¥¼ ì²˜ë¦¬í•˜ëŠ” í•¨ìˆ˜
      * @param c
      */
     static void Add(char c) {
@@ -77,7 +77,7 @@ public class P12891_DNAºñ¹Ğ¹øÈ£ {
         }
     }
 
-    /** »õ·Î µé¾î¿Â ÇÔ¼ö Á¦°Å
+    /** ìƒˆë¡œ ë“¤ì–´ì˜¨ í•¨ìˆ˜ ì œê±°
      * @param c
      */
     static void Remove(char c) {

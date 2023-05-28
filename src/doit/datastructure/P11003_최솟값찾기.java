@@ -5,28 +5,28 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.StringTokenizer;
 
-public class P11003_ÃÖ¼Ú°ªÃ£±â {
+public class P11003_ìµœì†Ÿê°’ì°¾ê¸° {
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        // Ãâ·ÂÀ» ¹öÆÛ¿¡ ³Ö°í ÇÑ ¹ø¿¡ Ãâ·ÂÇÏ±â À§ÇØ BufferedWriter »ç¿ë
+        // ì¶œë ¥ì„ ë²„í¼ì— ë„£ê³  í•œ ë²ˆì— ì¶œë ¥í•˜ê¸° ìœ„í•´ BufferedWriter ì‚¬ìš©
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(bf.readLine());
 
-        int N = Integer.parseInt(st.nextToken()); // ¼ıÀÚÀÇ °³¼ö
-        int L = Integer.parseInt(st.nextToken()); // ½½¶óÀÌµù À©µµ¿ìÀÇ °³¼ö
+        int N = Integer.parseInt(st.nextToken()); // ìˆ«ìì˜ ê°œìˆ˜
+        int L = Integer.parseInt(st.nextToken()); // ìŠ¬ë¼ì´ë”© ìœˆë„ìš°ì˜ ê°œìˆ˜
 
         st = new StringTokenizer(bf.readLine());
         Deque<Node> myDeque = new ArrayDeque<>();
 
         for(int i = 0; i < N; i++) {
-            int current = Integer.parseInt(st.nextToken()); // »õ·Ó°Ô µé¾î¿À´Â °ª, Á¤·ÄÇÏÁö ¾Ê°í ÇöÀç ¼öº¸´Ù Å« °ªÀ» µ¦¿¡¼­ Á¦°Å
+            int current = Integer.parseInt(st.nextToken()); // ìƒˆë¡­ê²Œ ë“¤ì–´ì˜¤ëŠ” ê°’, ì •ë ¬í•˜ì§€ ì•Šê³  í˜„ì¬ ìˆ˜ë³´ë‹¤ í° ê°’ì„ ë±ì—ì„œ ì œê±°
 
-            // µ¦ÀÌ ºñ¾îÀÖÁö ¾Ê°í, ¸¶Áö¸· °ªÀÌ ÇöÀç °ªº¸´Ù Å©¸é ¸¶Áö¸· °ª Á¦°Å
+            // ë±ì´ ë¹„ì–´ìˆì§€ ì•Šê³ , ë§ˆì§€ë§‰ ê°’ì´ í˜„ì¬ ê°’ë³´ë‹¤ í¬ë©´ ë§ˆì§€ë§‰ ê°’ ì œê±°
             while(!myDeque.isEmpty() && myDeque.getLast().value > current) {
                 myDeque.removeLast();
             }
             myDeque.addLast(new Node(current, i));
-            // ¹üÀ§¿¡¼­ ¹ş¾î³­ °ªÀº µ¦¿¡¼­ Á¦°Å
+            // ë²”ìœ„ì—ì„œ ë²—ì–´ë‚œ ê°’ì€ ë±ì—ì„œ ì œê±°
             if(myDeque.getFirst().index <= i - L) {
                 myDeque.removeFirst();
             }
